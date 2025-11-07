@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilgal - Community Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: #333;
+        }
+
+        /* Main color - Bright vibrant purple/pink */
+        .accent-color {
+            color: #d946ef;
+        }
+        .accent-bg {
+            background: #d946ef;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Container for all sections */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #d946ef;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Button */
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #d946ef;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+            font-weight: bold;
+        }
+
+        /* Work item */
+        .work-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .work-date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Brand box */
+        .brand-box {
+            background: #f5f5f5;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: #f9f9f9;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d946ef;
+            border-radius: 5px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #d946ef;
+        }
+
+        /* Contact form */
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #d946ef;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #d946ef;
+        }
+
+        /* CV/Skills Section Styling */
+        .cv-section {
+            background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #d946ef;
+            font-weight: 500;
+        }
+
+        .download-cv {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #d946ef;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .download-cv:hover {
+            background: #c026d3;
+        }
+
+        /* Image styling */
+        .brand-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin: 20px auto;
+            display: block;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .brand-box-with-logo {
+            background: #f5f5f5;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+            .brand-logo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#cv">CV</a>
+        <a href="#brands">Brands</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- HOME SECTION -->
+        <section id="home">
+            <h1>Ekpemogu Gilgal Uchechi</h1>
+            <p style="font-size: 24px; color: #666;">Content Strategist | Social Media Manager | Community Manager</p>
+            <p>I help brands build engaged communities, create compelling content strategies, and manage social media presence that drives real connections and results.</p>
+            <a href="#contact" class="button">Get In Touch</a>
+            <a href="#work" class="button" style="background: white; color: #d946ef; border: 2px solid #d946ef;">View My Work</a>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a Content Strategist, Social Media Manager, and Community Manager who specializes in building authentic connections between brands and their audiences. I create strategic content that resonates, manage communities that thrive, and develop social media strategies that deliver measurable results.</p>
+            
+            <h3 style="margin-top: 30px;">What I Do:</h3>
+            <div class="brand-box">
+                <h3>Content Strategy</h3>
+                <p>Developing comprehensive content strategies that align with brand goals and engage target audiences across multiple platforms.</p>
+            </div>
+            
+            <div class="brand-box">
+                <h3>Social Media Management</h3>
+                <p>Creating and managing social media presence that builds brand awareness, drives engagement, and grows communities.</p>
+            </div>
+            
+            <div class="brand-box">
+                <h3>Community Management</h3>
+                <p>Building and nurturing thriving online communities where members feel valued, engaged, and connected to the brand.</p>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section id="work">
+            <h2>Work Experience & Contributions</h2>
+            
+            <div class="work-item">
+                <h3>Community Manager - H.E.R. DAO Nigeria</h3>
+                <p class="work-date"> 2025</p>
+                <p>Took over the reigns of H.E.R. DAO Nigeria with little direction and achieved incredible growth in just 10 short months. Built and nurtured an engaged community, created strategic content, and drove significant community engagement and growth.</p>
+            </div>
+
+            <div class="work-item">
+                <h3>Community Manager - H.E.R. DAO</h3>
+                <p class="work-date">2025</p>
+                <p>Managed community engagement and social media presence for H.E.R. DAO, creating content strategies that resonated with the community and drove meaningful interactions.</p>
+            </div>
+
+            <div class="work-item">
+                <h3>Content Creator - Celo Ecosystem</h3>
+                <p class="work-date">2025</p>
+                <p>Contributed to the Celo Ecosystem by creating comprehensive video guides on how to use apps built on Celo. These educational resources helped onboard new users and improve the overall user experience within the ecosystem.</p>
+            </div>
+        </section>
+
+        <!-- CV/RESUME SECTION -->
+        <section id="cv">
+            <h2>My CV / Resume</h2>
+            
+            <div class="cv-section">
+                <h3>Skills & Expertise</h3>
+                <div class="skills-list">
+                    <div class="skill-item">✨ Community Management</div>
+                    <div class="skill-item">✨ Social Media Strategy</div>
+                    <div class="skill-item">✨ Content Creation</div>
+                    <div class="skill-item">✨ Content Strategy</div>
+                    <div class="skill-item">✨ Video Content Creation</div>
+                    <div class="skill-item">✨ Community Growth</div>
+                    <div class="skill-item">✨ Engagement Strategy</div>
+                    <div class="skill-item">✨ Educational Content</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>Education</h3>
+                <p><strong>BSc in Accountancy</strong></p>
+                <p><strong>Imo State University</strong></p>
+              
+                <p>Bachelor of Science degree in Accountancy with focus on financial management, auditing, and business analytics.</p>
+            </div>
+
+            <div class="cv-section">
+                <h3>Achievements</h3>
+                <p>✅ Grew H.E.R. DAO Nigeria community to [X] members in 10 months</p>
+                <p>✅ Created comprehensive video guides for Celo Ecosystem</p>
+
+            </div>
+
+            <!-- Download CV Button -->
+            <a href="https://drive.google.com/file/d/1v5ovMEIJNg2Onv6iiUI8r_mOngISqOo3/preview" class="download-cv" target="_blank">📄 Download Full CV</a>
+        </section>
+
+        <!-- BRANDS -->
+        <section id="brands">
+            <h2>Brands I've Worked With</h2>
+            
+            <div class="brand-box">
+                <h3>H.E.R. DAO</h3>
+                <p>A decentralized autonomous organization empowering women in Web3. Managed community engagement,and strategy.</p>
+            </div>
+            
+            <div class="brand-box">
+                <h3>H.E.R. DAO Nigeria</h3>
+                <p>The Nigerian chapter of H.E.R. DAO. Led community growth from ground zero, achieving remarkable engagement and community building in under a year.</p>
+            </div>
+            
+            <div class="brand-box">
+                <h3>Celo Ecosystem</h3>
+                <p>Created educational video content and guides to help users navigate apps built on the Celo blockchain, contributing to ecosystem growth and user adoption.</p>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials">
+            <h2>What Clients Say</h2>
+            
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <p>"First off, I know I've not been all that present on telegram but I want to commend, appreciate you and congratulate you for your incredible growth."</p>
+                    <p>"You reached out to me this year that you wanted to be a community manager, it was this year right @Gigi 🦋"</p>
+                    <p>"You took over the reigns of H.E.R.DAO Nigeria with little direction and you have done incredible in 10 short months."</p>
+                    <p>"If you have a job let's work towards giving you publicity. If you are job hunting let's work towards finding you a dollar paying job before the year ends."</p>
+                    <p><strong>"Well done once again"</strong></p>
+                </div>
+                <p class="testimonial-author">— H.E.R. DAO Nigeria Leadership</p>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Interested in working together? Have a project in mind? Send me a message and I'll get back to you as soon as possible.</p>
+            
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </div>
+
+    <!-- FOOTER - Add your actual social links here -->
+    <footer>
+        <p>
+            <a href="https://linkedin.com/in/gilgal-ekpemogu" target="_blank">LinkedIn</a> |
+            <a href="https://twitter.com/Gigi_web3" target="_blank">Twitter</a> |
+            <a href="https://t.me/Gigi_uchechi" target="_blank">Telegram</a> |
+            <a href="mailto:your.email@uchechigilgal@gmail.com">Email</a>
+        </p>
+        <p>© 2025 Ekpemogu Gilgal Uchechi - Content Strategist | Social Media Manager | Community Manager</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.\n\n(Note: To make this form actually send emails, connect it to a service like Formspree, EmailJS, or Netlify Forms)');
+            this.reset();
+        });
+    </script>
+
+</body>
+  </html>
